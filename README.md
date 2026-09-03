@@ -34,11 +34,12 @@ The architecture separates identity, enterprise applications, Azure authorizatio
 | `docs/limitations-and-lessons.md` | Confirmed limitations, troubleshooting, and lessons learned |
 | `diagrams/architecture.png` | Corrected Figure 1 architecture diagram |
 | `reports/NovaTech_IAM_Security_Lab_Final_Report.pdf` | Complete final portfolio report |
-| `reports/NovaTech_IAM_Security_Lab_Final_Report.docx` | Fixed-layout DOCX version of the report |
 
 ## Evidence and privacy
 
 The final report uses sanitized, public-release-safe evidence. Tenant, subscription, request, IP, certificate, and personal account details should remain redacted before publication. Screenshots can be added under `evidence/` after a final privacy review.
+
+The PDF in `reports/` is the canonical public report. A fixed-layout DOCX copy is retained locally where needed.
 
 ## Limitations
 
