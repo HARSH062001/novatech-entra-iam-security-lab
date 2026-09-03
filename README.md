@@ -37,7 +37,17 @@ The architecture separates identity, enterprise applications, Azure authorizatio
 
 ## Evidence and privacy
 
-The final report uses sanitized, public-release-safe evidence. Tenant, subscription, request, IP, certificate, and personal account details should remain redacted before publication. Screenshots can be added under `evidence/` after a final privacy review.
+The repository includes 41 reviewed, renamed, and sanitized screenshots from the lab. Originals remain private in the source folder. Tenant, subscription, request, IP, certificate, and personal account details were redacted before publication.
+
+| Evidence folder | Coverage |
+|---|---|
+| `evidence/identity-and-apps/` | Tenant, users, groups, and enterprise-application setup |
+| `evidence/identity-lifecycle/` | User property change / mover scenario |
+| `evidence/groups-rbac/` | Group membership and access-control evidence |
+| `evidence/authentication/` | Allowed sign-in and denied password-reset evidence |
+| `evidence/offboarding/` | Ethan Wilson disablement and session revocation |
+| `evidence/audit-monitoring/` | Sign-in, audit-log, device, location, and authentication investigations |
+| `evidence/access-review/` | Manual access-review evidence for lab identities |
 
 The PDF in `reports/` is the canonical public report. A fixed-layout DOCX copy is retained locally where needed.
 
@@ -49,4 +59,3 @@ Native Entra Identity Governance Access Reviews and automated lifecycle workflow
 
 Harsh Chaudhary  
 Cybersecurity portfolio project | Microsoft Entra ID | Azure IAM
-
