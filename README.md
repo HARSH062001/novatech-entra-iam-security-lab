@@ -8,6 +8,12 @@ This project demonstrates practical identity lifecycle management, least-privile
 
 The lab was built and tested in Microsoft Entra ID and Microsoft Azure using five lab identities, role-oriented security groups, enterprise applications, Azure Storage, subscription-level RBAC, Activity Log, change history, and Azure Monitor alerting.
 
+## Latest case study: Joiner–Mover–Leaver
+
+[Maya Chen's identity lifecycle case study](jml/README.md) documents a later extension completed on 19–20 November 2026. I used Microsoft Graph PowerShell for account creation, department and group changes, and account disablement, then completed session revocation and final group removal in the Entra portal. The case study includes 17 sanitized screenshots covering successful outcomes, group checks and audit verification.
+
+The [proposed reusable workflow](jml/workflow/README.md) defaults to dry run and requires explicit apply, with tenant/user/group validation and partial-failure reporting. It passed 15 offline mock checks and remains untested against live Entra. It is separate from the commands used for Maya's completed hybrid lab.
+
 ## Security capabilities demonstrated
 
 - Entra users, groups, and directory roles
@@ -30,6 +36,7 @@ The architecture separates identity, enterprise applications, Azure authorizatio
 
 | Path | Purpose |
 |---|---|
+| `jml/README.md` | Maya Chen JML case study, evidence and proposed workflow |
 | `docs/project-summary.md` | Recruiter-friendly project summary and outcomes |
 | `docs/limitations-and-lessons.md` | Confirmed limitations, troubleshooting, and lessons learned |
 | `diagrams/architecture.png` | Corrected Figure 1 architecture diagram |
@@ -37,7 +44,7 @@ The architecture separates identity, enterprise applications, Azure authorizatio
 
 ## Evidence and privacy
 
-The repository includes 41 reviewed, renamed, and sanitized screenshots from the lab. Originals remain private in the source folder. Tenant, subscription, request, IP, certificate, and personal account details were redacted before publication.
+The original lab includes 41 reviewed, renamed, and sanitized screenshots. The later JML extension adds 17 sanitized screenshots in `jml/evidence/`. Originals remain private in the source folder. Tenant, subscription, request, IP, certificate, and personal account details were redacted before publication.
 
 | Evidence folder | Coverage |
 |---|---|
@@ -49,11 +56,11 @@ The repository includes 41 reviewed, renamed, and sanitized screenshots from the
 | `evidence/audit-monitoring/` | Sign-in, audit-log, device, location, and authentication investigations |
 | `evidence/access-review/` | Manual access-review evidence for lab identities |
 
-The PDF in `reports/` is the canonical public report. A fixed-layout DOCX copy is retained locally where needed.
+The PDF in `reports/` is the original lab report. The later Maya Chen JML extension is documented separately in `jml/README.md`. A fixed-layout DOCX copy is retained locally where needed.
 
 ## Limitations
 
-Native Entra Identity Governance Access Reviews and automated lifecycle workflows were not available in the lab tenant. Access governance was therefore completed manually and documented as a limitation and future enhancement. Conditional Access and PowerShell/Graph inventory automation are not claimed as completed controls.
+Native Entra Identity Governance Access Reviews and automated lifecycle workflows were not available in the lab tenant. Access governance was therefore completed manually and documented as a limitation and future enhancement. Conditional Access and PowerShell/Graph inventory automation are not claimed as completed controls in the original lab. The later JML extension documents specific Graph PowerShell operations and a portal fallback; its proposed reusable workflow has only been tested with offline mocks.
 
 ## Author
 
