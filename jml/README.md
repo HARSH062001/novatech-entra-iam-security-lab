@@ -70,6 +70,8 @@ The [Maya audit view](evidence/10-maya-audit.png) is displayed as **Local** time
 
 The source's administrator actor label is an account identifier; the portal method is established by the accompanying portal captures and my lab notes. The audit list does not expose each changed property's values, so I used the department output and membership screenshots to corroborate the resulting state. Redactions remove target identifiers and personal actor labels while preserving activity, status, timestamps and Graph actor labels.
 
-## Proposed next improvement
+## Follow-up: Jordan Ellis live workflow validation
 
-The separate [PowerShell workflow and runbook](workflow/README.md) add a default dry run, pinned tenant/user/group checks, repeat-run handling and partial-failure reporting. This is a proposed improvement, **untested against live Entra**, and was not the script used to produce Maya's evidence. A new fictional account is required for the next live test.
+On 22 November 2026, I validated preview and apply for all three stages of the [reusable PowerShell workflow](workflow/README.md) in the live NovaTech lab with Jordan Ellis, one fictional user, and two pinned groups. The [Jordan validation write-up](jordan-live-validation.md) includes six redacted screenshots, the null group role-assignability issue, the explicit portal-verification control and the final Groups page showing no memberships.
+
+This follow-up is separate from Maya's 19–20 November hybrid workflow documented above. The reusable script was not used to produce Maya's evidence. The original 15 offline mock results remain historical; the expanded harness now passes 39 mock checks. Jordan's first-sign-in behaviour and active application-session termination were outside the live validation scope.

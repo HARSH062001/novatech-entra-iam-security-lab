@@ -8,11 +8,15 @@ This project demonstrates practical identity lifecycle management, least-privile
 
 The lab was built and tested in Microsoft Entra ID and Microsoft Azure using five lab identities, role-oriented security groups, enterprise applications, Azure Storage, subscription-level RBAC, Activity Log, change history, and Azure Monitor alerting.
 
-## Latest case study: Joiner–Mover–Leaver
+## Latest validation: reusable Joiner–Mover–Leaver workflow
+
+[Jordan Ellis's live JML validation](jml/jordan-live-validation.md) records preview and apply for all three stages on 22 November 2026, using PowerShell 7.7.0 and delegated Graph access. The validation covered one fictional user and two pinned groups. Six sanitized screenshots show the stage results, disabled account, audit events and final Groups page with no memberships.
+
+## Original JML case study: Maya Chen
 
 [Maya Chen's identity lifecycle case study](jml/README.md) documents a later extension completed on 19–20 November 2026. I used Microsoft Graph PowerShell for account creation, department and group changes, and account disablement, then completed session revocation and final group removal in the Entra portal. The case study includes 17 sanitized screenshots covering successful outcomes, group checks and audit verification.
 
-The [proposed reusable workflow](jml/workflow/README.md) defaults to dry run and requires explicit apply, with tenant/user/group validation and partial-failure reporting. It passed 15 offline mock checks and remains untested against live Entra. It is separate from the commands used for Maya's completed hybrid lab.
+The [reusable workflow](jml/workflow/README.md) defaults to dry run and requires explicit apply, with tenant/user/group validation and partial-failure reporting. Jordan's later run validated it in the live lab, including the explicit portal-verification switch required for null group role-assignability responses. The original 15 offline checks are retained; the expanded harness passes 39 mock checks. First-sign-in behaviour and active application-session termination were outside the live test scope.
 
 ## Security capabilities demonstrated
 
@@ -36,7 +40,8 @@ The architecture separates identity, enterprise applications, Azure authorizatio
 
 | Path | Purpose |
 |---|---|
-| `jml/README.md` | Maya Chen JML case study, evidence and proposed workflow |
+| `jml/README.md` | Maya Chen historical JML case study and follow-up overview |
+| `jml/jordan-live-validation.md` | Jordan Ellis live workflow validation and six evidence screenshots |
 | `docs/project-summary.md` | Recruiter-friendly project summary and outcomes |
 | `docs/limitations-and-lessons.md` | Confirmed limitations, troubleshooting, and lessons learned |
 | `diagrams/architecture.png` | Corrected Figure 1 architecture diagram |
@@ -44,7 +49,7 @@ The architecture separates identity, enterprise applications, Azure authorizatio
 
 ## Evidence and privacy
 
-The original lab includes 41 reviewed, renamed, and sanitized screenshots. The later JML extension adds 17 sanitized screenshots in `jml/evidence/`. Originals remain private in the source folder. Tenant, subscription, request, IP, certificate, and personal account details were redacted before publication.
+The original lab includes 41 reviewed, renamed, and sanitized screenshots. Maya's JML extension adds 17 sanitized screenshots in `jml/evidence/`; Jordan's follow-up adds six in `jml/evidence/jordan/`. Originals remain private in the source folder. Tenant, subscription, request, IP, certificate, and personal account details were redacted before publication.
 
 | Evidence folder | Coverage |
 |---|---|
@@ -60,7 +65,7 @@ The PDF in `reports/` is the original lab report. The later Maya Chen JML extens
 
 ## Limitations
 
-Native Entra Identity Governance Access Reviews and automated lifecycle workflows were not available in the lab tenant. Access governance was therefore completed manually and documented as a limitation and future enhancement. Conditional Access and PowerShell/Graph inventory automation are not claimed as completed controls in the original lab. The later JML extension documents specific Graph PowerShell operations and a portal fallback; its proposed reusable workflow has only been tested with offline mocks.
+Native Entra Identity Governance Access Reviews and automated lifecycle workflows were not available in the lab tenant. Access governance was therefore completed manually and documented as a limitation and future enhancement. Conditional Access and PowerShell/Graph inventory automation are not claimed as completed controls in the original lab. Maya's JML extension documents specific Graph PowerShell operations and a portal fallback. Jordan's later live lab run validates preview and apply of the reusable workflow for one fictional user and two pinned groups; it does not establish production readiness or immediate termination of active application sessions.
 
 ## Author
 
